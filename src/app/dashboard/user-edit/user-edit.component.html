@@ -1,0 +1,23 @@
+<h2 mat-dialog-title>Edit user info.</h2>
+
+<mat-dialog-content [formGroup]="form">
+    <mat-form-field>
+        <input matInput placeholder="name" formControlName="name">
+
+    </mat-form-field>
+    <br>
+
+    <mat-form-field>
+        <input matInput placeholder="email" formControlName="email">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="phone" formControlName="phone">
+    </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions class="text-center">
+    <button mat-raised-button (click)="close()">Close</button>
+    <button class="mat-raised-button mat-primary" (click)="save()">Save</button>
+</mat-dialog-actions>
+<br>

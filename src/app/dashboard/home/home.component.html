@@ -1,3 +1,36 @@
-<p>
-  home works!
-</p>
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center">
+
+            <div class="form-row">
+                <div class="col-3">
+                    <input type="text" class="form-control" placeholder="Search by name" [(ngModel)]="userSearch">
+                </div>
+            </div>
+
+        </div>
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3" *ngFor="let user of users | userFilter: userSearch | paginate: { id: 'foo', itemsPerPage: 4, currentPage: page }">
+            <div class="flip-container box-shadow">
+                <div class="flipper">
+                    <div class="front">
+                        <img src="assets/images/user.png" />
+                        <p class="username">Name : {{user.name}}</p>
+                        <div class="sub">
+                            <p class="active">{{user.status}}</p>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <p id="titulo">{{user.name}}</p>
+                        <p>ID : {{user.id}}</p>
+                        <p>email : {{user.email}}</p>
+                        <p>phone : {{user.phone}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 text-center">
+            <pagination-controls id="foo" (pageChange)="page = $event" responsive="true" previousLabel="Previous" nextLabel="Next">
+            </pagination-controls>
+        </div>
+    </div>
+</div>

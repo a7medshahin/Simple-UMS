@@ -1,6 +1,7 @@
-<h1>Dashboard Layout</h1>
-<p>
-    <a routerLink="home">Home</a> |
-    <a routerLink="admin"> Admin </a>
-</p>
+<nav class="navbar navbar-light bg-light justify-content-between">
+    <a class="navbar-brand text-capitalize">{{type}}</a>
+    <form class="form-inline">
+        <button class="btn btn-dark" type="button" (click)="logout()">Logout</button>
+    </form>
+</nav>
 <router-outlet></router-outlet>

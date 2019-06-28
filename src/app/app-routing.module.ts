@@ -5,14 +5,16 @@ import { LayoutComponent } from './dashboard/layout/layout.component';
 import { HomeComponent } from './dashboard/home/home.component';
 import { AdminComponent } from './dashboard/admin/admin.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AuthGuard } from './guards/auth-guard.service';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: LayoutComponent,
+    canActivate: [AuthGuard],
     children: [
-      { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: 'home', component: HomeComponent },
+      { path: '', redirectTo: 'user', pathMatch: 'full' },
+      { path: 'user', component: HomeComponent },
       { path: 'admin', component: AdminComponent }
     ]
   },
@@ -21,6 +23,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [AuthGuard]
 })
 export class AppRoutingModule { }

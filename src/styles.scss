@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+    // background-color: #eee !important;
+    font-family: Roboto;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.ngx-pagination {
+    margin-top: 30px !important;
+}
+
+.mat-dialog-actions {
+    display: block !important;
+}
+
+.ngx-pagination .current {
+    background-color: #636363 !important;
+    color: #fff !important;
+}
+
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #636363 !important;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(73, 80, 87, .25) !important;
+}
